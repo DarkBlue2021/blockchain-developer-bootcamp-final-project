@@ -1,18 +1,17 @@
-Testnet address and network where your contract(s) have been deployed
-Hosted on Github Pages, Heroku, Netlify, Fleek, Surge or some other free frontend service that gives users a public interface to your decentralized application
 
-To interact with the deployed contract, MetaMask must be set to Ropsten. The website will not warn you if you are on the wrong network!
+* Heroku *
+https://consensysfinalproject.herokuapp.com/
 
-
-* Heroku
-
-
-* Smart Contract
+* Smart Contract *
  Deployed onto Rinkeby: 
 
 1_initial_migration.js
-https://rinkeby.etherscan.io/address/0x6d5dd2d019a431d37a92b573a47ddad6de724832
+Contract Address: 0x6d5dd2d019a431d37a92b573a47ddad6de724832
+Account: 0x58b36E0eF26BF365a0F37651E1561B1340333b11
+Rinkeby URL: https://rinkeby.etherscan.io/address/0x6d5dd2d019a431d37a92b573a47ddad6de724832
 
 2_my_home_energy.js
-https://rinkeby.etherscan.io/address/0x4D05a2787d310de0E659AD30684d243cB70599fB
+Contract Address: 0x4D05a2787d310de0E659AD30684d243cB70599fB
+Account: 0x58b36E0eF26BF365a0F37651E1561B1340333b11
+Rinkeby URL: https://rinkeby.etherscan.io/address/0x4D05a2787d310de0E659AD30684d243cB70599fB
 
