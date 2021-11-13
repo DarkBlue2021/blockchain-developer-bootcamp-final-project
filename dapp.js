@@ -70,9 +70,9 @@ ssSubmit.onclick = async () => {
 
 	simpleStorage.setProvider(window.ethereum)
 
-	await simpleStorage.methods.store(ssValue).send({from: ethereum.selectedAddress})
+	let txStatus = await simpleStorage.methods.store(ssValue).send({from: ethereum.selectedAddress})
 
-	mmTxStatus.innerHTML = 'Transaction processed ! '
+	mmTxStatus.innerHTML = 'Transaction processed ! Status: ' + txStatus
 }
 
 

@@ -1,4 +1,3 @@
-
 /*
  * uncomment accounts to access the test accounts made available by the
  * Ethereum client
@@ -26,8 +25,8 @@ contract("MyHomeEnergy", function (accounts) {
       // Get subject
       const ssInstance = await MyHomeEnergy.deployed();
       // Verify is has an initial value of 0
-      const storedData = await ssInstance.getStoredData.call();
-      assert.equal(storedData, 0, "Initial state should be zero");
+      const billData = await ssInstance.getBillData.call();
+      assert.equal(billData, 0, "Initial state should be zero");
      }) 
   })
 
@@ -36,9 +35,9 @@ contract("MyHomeEnergy", function (accounts) {
      it ("should store a new value 42", async () =>{
         const ssInstance = await MyHomeEnergy.deployed();
         // Change the number ! 
-        await ssInstance.setStoredData(42, { from: accounts[0] });
-        const storedData = await ssInstance.getStoredData.call();
-        assert.equal(storedData, 42, `42 was not stored !`)
+        await ssInstance.setBillData(42, { from: accounts[0] });
+        const billData = await ssInstance.getBillData.call();
+        assert.equal(billData, 42, `42 was not bill !`)
      })
    })
 
@@ -48,12 +47,12 @@ contract("MyHomeEnergy", function (accounts) {
         const [owner, badjoe] = accounts;
         const ssInstance = await MyHomeEnergy.new(42, {from:owner});
         try{
-          await ssInstance.setStoredData(22, {from: badjoe});
+          await ssInstance.setBillData(22, {from: badjoe});
         } catch (err){}
         const balance = await web3.eth.getBalance(accounts[1]);
         console.log(balance)
-        const storedData = await ssInstance.getStoredData.call();
-        assert.equal(storedData, 42, 'stored data was not changed')
+        const billData = await ssInstance.getBillData.call();
+        assert.equal(billData, 42, 'bill data was not changed')
       })
    })
 
@@ -63,12 +62,12 @@ contract("MyHomeEnergy", function (accounts) {
         const [owner, badjoe] = accounts;
         const ssInstance = await MyHomeEnergy.new(42, {from:owner});
         try{
-          await ssInstance.setStoredData(22, {from: badjoe});
+          await ssInstance.setBillData(22, {from: badjoe});
         } catch (err){}
         const balance = await web3.eth.getBalance(accounts[1]);
         console.log(balance)
-        const storedData = await ssInstance.getStoredData.call();
-        assert.equal(storedData, 42, 'stored data was not changed')
+        const billData = await ssInstance.getBillData.call();
+        assert.equal(billData, 42, 'bill data was not changed')
       })
    })
 

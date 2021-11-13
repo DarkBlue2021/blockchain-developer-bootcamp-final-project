@@ -2,33 +2,34 @@
 pragma solidity >=0.5.16 <0.9.00;
 
 // REQUIREMENTS 
-// o Are commented to the specs described here
+// (1) Are commented to the specs described here
 //   -> https://docs.soliditylang.org/en/latest/natspec-format.html
-// o Use at least two design patterns from the "Smart Contracts" section (SEE A LIST OF DESIGN PATTERNS HERE)
-// o Protect against two attack vectors from the "Smart Contracts" section with its SWC number (SEE A LIST OF 
+// (2) Use at least two design patterns from the "Smart Contracts" section (SEE A LIST OF DESIGN PATTERNS HERE)
+// (3) Protect against two attack vectors from the "Smart Contracts" section with its SWC number (SEE A LIST OF 
 //  ATTACK VECTORS HERE)
 //  -> https://swcregistry.io/ 
-// o Inherits from at least one library or interface
-// o Can be easily compiled, migrated and tested (see #5)
+// (4) Inherits from at least one library or interface
+// (5) Can be easily compiled, migrated and tested (see #5)
 
-/// @title A simulator for trees
-/// @author Larry A. Gardner
-/// @notice You can use this contract for only the most basic simulation
+
+/// @title My Home Energy payment online
+/// @author W. HE
+/// @notice The contract is to make payment for home energy
 /// @dev All function calls are currently implemented without side effects
 contract MyHomeEnergy {
-  uint256 public storedData;
+  uint256 public billData;
   address owner = msg.sender;
 
   constructor (uint256 _num) public {
-    storedData = _num;
+    billData = _num;
   }
 
-  function getStoredData() public view returns (uint256){
-    return storedData;
+  function getBillData() public view returns (uint256){
+    return billData;
   }
 
-  function setStoredData(uint256 x) public {
+  function setBillData(uint256 x) public {
     require(msg.sender == owner, "Not the owner!");
-    storedData = x;
+    billData = x;
   }
 }
