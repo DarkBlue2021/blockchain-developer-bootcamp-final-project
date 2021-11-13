@@ -57,4 +57,19 @@ contract("MyHomeEnergy", function (accounts) {
       })
    })
 
+    // Test 4: 
+    describe("Test 4 - TO DO !!!", () => {
+      it("should have sufficient funds to pay bills", async() => {
+        const [owner, badjoe] = accounts;
+        const ssInstance = await MyHomeEnergy.new(42, {from:owner});
+        try{
+          await ssInstance.setStoredData(22, {from: badjoe});
+        } catch (err){}
+        const balance = await web3.eth.getBalance(accounts[1]);
+        console.log(balance)
+        const storedData = await ssInstance.getStoredData.call();
+        assert.equal(storedData, 42, 'stored data was not changed')
+      })
+   })
+
 });

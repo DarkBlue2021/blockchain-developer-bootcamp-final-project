@@ -36,4 +36,3 @@ Walking through your project, including submitting transactions and seeing the u
 5. Populate ".env" File Locally
 IMPORTANT: DO NOT UPLOAD SENSITIVE INFORMATION TO GITHUB OR A PUBLIC SITE! Your Infura account details, MetaMask mnemonics, any private keys, etc., should all be in a ".env" file which you add to your .gitignore in your project locally. 
 To populate your ".env" File, refer to https://blog.infura.io/how-to-use-dotenv-to-enhance-basic-security-within-your-dapp/
-

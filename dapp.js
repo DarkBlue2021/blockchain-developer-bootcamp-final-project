@@ -46,8 +46,8 @@ window.addEventListener('load', function(){
 const mmEnable = document.getElementById('mm-connect');
 
 mmEnable.onclick = async() => {
-    //console.log('beep!')
-    await ethereum.request({method:'eth_requestAccounts'})
+
+	await ethereum.request({method:'eth_requestAccounts'})
 
     const mmCurrentAccount = document.getElementById('mm-current-account')
 
@@ -57,6 +57,10 @@ mmEnable.onclick = async() => {
 const ssSubmit = document.getElementById('ss-input-button');
 
 ssSubmit.onclick = async () => {
+
+	let mmTxStatus = document.getElementById('mm-transaction-status')
+	mmTxStatus.innerHTML = 'Processing transaction ... '
+
 	const ssValue = document.getElementById('ss-input-box').value;
 	console.log(ssValue)
 
@@ -67,5 +71,8 @@ ssSubmit.onclick = async () => {
 	simpleStorage.setProvider(window.ethereum)
 
 	await simpleStorage.methods.store(ssValue).send({from: ethereum.selectedAddress})
+
+	mmTxStatus.innerHTML = 'Transaction processed ! '
 }
+
 
