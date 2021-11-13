@@ -1,1 +1,4 @@
 Testnet address and network where your contract(s) have been deployed
+Hosted on Github Pages, Heroku, Netlify, Fleek, Surge or some other free frontend service that gives users a public interface to your decentralized application
+
+To interact with the deployed contract, MetaMask must be set to Ropsten. The website will not warn you if you are on the wrong network!

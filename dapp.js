@@ -1,4 +1,4 @@
-console.log("hello dapp developers!")
+console.log("My Home Energy!")
 
 const ssAddress =  '0x01c1f08D2Fb49678A948286a8075fa48ea662bab'
 
@@ -32,15 +32,14 @@ const ssABI =
 	}
 ]
 
-//window.addEventListener('load', console.log("loaded!"))
 window.addEventListener('load', function(){
     if(typeof window.ethereum !== 'undefined'){
         console.log('MetMask detected!')
         let mmDetected = document.getElementById('mm-detected')       
-        mmDetected.innerHTML = "MetMask has been detected!"
+        mmDetected.innerHTML = "Your wallet (MetMask) has been detected!"
     } else {
         console.log('MetMask not availalbe!')        
-        alert("You need to install MetaMask!")
+        alert("You need to install your wallet (MetaMask) !")
     }
 })
 
