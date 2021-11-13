@@ -4,7 +4,11 @@ Hosted on Github Pages, Heroku, Netlify, Fleek, Surge or some other free fronten
 To interact with the deployed contract, MetaMask must be set to Ropsten. The website will not warn you if you are on the wrong network!
 
 
-Contract deployed onto Rinkeby: 
+* Heroku
+
+
+* Smart Contract
+ Deployed onto Rinkeby: 
 
 1_initial_migration.js
 https://rinkeby.etherscan.io/address/0x6d5dd2d019a431d37a92b573a47ddad6de724832
