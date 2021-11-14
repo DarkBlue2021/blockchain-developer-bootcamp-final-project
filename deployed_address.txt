@@ -6,12 +6,80 @@ https://consensysfinalproject.herokuapp.com/
  Deployed onto Rinkeby: 
 
 1_initial_migration.js
-Contract Address: 0x6d5dd2d019a431d37a92b573a47ddad6de724832
+Contract Address: 
 Account: 0x58b36E0eF26BF365a0F37651E1561B1340333b11
-Rinkeby URL: https://rinkeby.etherscan.io/address/0x6d5dd2d019a431d37a92b573a47ddad6de724832
+Rinkeby URL: https://rinkeby.etherscan.io/address/
 
 2_my_home_energy.js
-Contract Address: 0x4D05a2787d310de0E659AD30684d243cB70599fB
+Contract Address: 
 Account: 0x58b36E0eF26BF365a0F37651E1561B1340333b11
-Rinkeby URL: https://rinkeby.etherscan.io/address/0x4D05a2787d310de0E659AD30684d243cB70599fB
+Rinkeby URL: https://rinkeby.etherscan.io/address/
 
+
+Starting migrations...
+======================
+> Network name:    'rinkeby'
+> Network id:      4
+> Block gas limit: 30000000 (0x1c9c380)
+
+
+1_initial_migration.js
+======================
+
+   Replacing 'Migrations'
+   ----------------------
+   > transaction hash:    0xff1a637b2e07f97172cf73d31b0dcf5cf3a22d241d082494eabc9461b27bd8de
+   > Blocks: 1            Seconds: 5
+   > contract address:    0x1121DD2BdAd956F684e058b0646C50AAEC613b80
+   > block number:        9637476
+   > block timestamp:     1636844675
+   > account:             0x58b36E0eF26BF365a0F37651E1561B1340333b11
+   > balance:             56.247297307490270152
+   > gas used:            193243 (0x2f2db)
+   > gas price:           2.500000008 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000483107501545944 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 9637477)
+   > confirmation number: 2 (block: 9637478)
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.000483107501545944 ETH
+
+
+2_my_home_energy.js
+===================
+
+   Replacing 'MyHomeEnergy'
+   ------------------------
+   > transaction hash:    0x0c12cc4eed6ab632fec50476ea1c7c8003d62ff2e7e92cbb16002adc8a15422f
+   > Blocks: 1            Seconds: 13
+   > contract address:    0xff43b5B1C46BD39B3d60E79CA0fc67369f52F7b6
+   > block number:        9637480
+   > block timestamp:     1636844735
+   > account:             0x58b36E0eF26BF365a0F37651E1561B1340333b11
+   > balance:             56.246742187488493768
+   > gas used:            176310 (0x2b0b6)
+   > gas price:           2.500000008 gwei
+   > value sent:          0 ETH
+   > total cost:          0.00044077500141048 ETH
+
+   Pausing for 2 confirmations...
+   ------------------------------
+   > confirmation number: 1 (block: 9637481)
+   > confirmation number: 2 (block: 9637482)
+
+   > Saving migration to chain.
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:     0.00044077500141048 ETH
+
+
+Summary
+=======
+> Total deployments:   2
+> Final cost:          0.000923882502956424 ETH
