@@ -10,8 +10,8 @@ Protect against two attack vectors from the "Smart Contracts" section with its S
 
 (2) From Smart Contract Pitfalls and Attacks
     Not everything can be avoided, but you can write if you’re taking protection against:
-        (a) Re-entrancy
-        (b) Timestamp Dependence
+        (a) Re-entrancy (Do not perform external calls in contracts. If you do, ensure that they are the very last thing you do)
+        (b) Timestamp Dependence (Do not use timestamps in critical parts of the code, because miners can manipulate them.)
         (c) Forcibly Sending Ether
-        (d) Tx.Origin Authentication
+        (d) Tx.Origin Authentication (Not using tx.origin for authentication (or indeed, at all).)
 

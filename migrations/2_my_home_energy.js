@@ -1,5 +1,5 @@
-const MyHomeEnergy = artifacts.require("MyHomeEnergy");
+const MyHomeEnergyManager = artifacts.require("MyHomeEnergyManager");
 
 module.exports = function (deployer) {
-  deployer.deploy(MyHomeEnergy, 0);
+  deployer.deploy(MyHomeEnergyManager, 0);
 };
