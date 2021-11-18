@@ -34,19 +34,19 @@ Note: This section used to require three bash scripts but has been revised.
 ## 4. Project Screencast
 Walking through your project, including submitting transactions and seeing the updated state. You can use a screenrecorder of your choosing or something like Loom, and you can share the link to the recording in your README.md
 
-# (1) Confirm your web brower has MetMask installed. 
+### (1) Confirm your web brower has MetMask installed. 
 > Note: For the purpose of this demonstrate, make sure you have enough Rinkeby ETH in your wallet.
 
-# (2) Open My Home Energy page at: https://consensysfinalproject.herokuapp.com/
+### (2) Open My Home Energy page at: https://consensysfinalproject.herokuapp.com/
 Pictures ![Test picture](/screens/Test.jpg)
 
-# (3) Confirm the Energy Bill to pay is correct.  
+### (3) Confirm the Energy Bill to pay is correct.  
 
-# (4) Connect to your MetMask wallet.
+### (4) Connect to your MetMask wallet.
 
-# (5) Confirm transaction details. Click on the Submit button, if all details are OK. 
+### (5) Confirm transaction details. Click on the Submit button, if all details are OK. 
 
-# (6) From your Metmask wallet, confirm details. If all good, click on Approve. Otherwise,  Reject the transaction. 
+### (6) From your Metmask wallet, confirm details. If all good, click on Approve. Otherwise,  Reject the transaction. 
 
 
 ## 5. Populate ".env" File Locally
