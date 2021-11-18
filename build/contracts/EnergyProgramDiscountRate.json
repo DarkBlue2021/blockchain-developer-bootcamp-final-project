@@ -1,141 +1,6 @@
 {
-  "contractName": "MyHomeEnergy",
+  "contractName": "EnergyProgramDiscountRate",
   "abi": [
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "_from",
-          "type": "address"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "_type",
-          "type": "uint256"
-        },
-        {
-          "indexed": false,
-          "internalType": "uint256",
-          "name": "_value",
-          "type": "uint256"
-        }
-      ],
-      "name": "LogSetAccountBalance",
-      "type": "event"
-    },
-    {
-      "anonymous": false,
-      "inputs": [
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "previousOwner",
-          "type": "address"
-        },
-        {
-          "indexed": true,
-          "internalType": "address",
-          "name": "newOwner",
-          "type": "address"
-        }
-      ],
-      "name": "OwnershipTransferred",
-      "type": "event"
-    },
-    {
-      "inputs": [],
-      "name": "accountbalance",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "owner",
-      "outputs": [
-        {
-          "internalType": "address",
-          "name": "",
-          "type": "address"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "renounceOwnership",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "address",
-          "name": "newOwner",
-          "type": "address"
-        }
-      ],
-      "name": "transferOwnership",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [],
-      "name": "getAccountBalance",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "x",
-          "type": "uint256"
-        }
-      ],
-      "name": "setAccountBalance",
-      "outputs": [],
-      "stateMutability": "nonpayable",
-      "type": "function"
-    },
-    {
-      "inputs": [
-        {
-          "internalType": "uint256",
-          "name": "typeId",
-          "type": "uint256"
-        }
-      ],
-      "name": "getDiscountByType",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
-      "type": "function"
-    },
     {
       "inputs": [],
       "name": "getCoolingDiscount",
@@ -146,7 +11,7 @@
           "type": "uint256"
         }
       ],
-      "stateMutability": "pure",
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -159,7 +24,7 @@
           "type": "uint256"
         }
       ],
-      "stateMutability": "pure",
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -172,7 +37,7 @@
           "type": "uint256"
         }
       ],
-      "stateMutability": "pure",
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -185,11 +50,11 @@
           "type": "uint256"
         }
       ],
-      "stateMutability": "pure",
+      "stateMutability": "view",
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.8.1+commit.df193b15\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_type\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"LogSetAccountBalance\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"accountbalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAccountBalance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getApplianceDiscount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCoolingDiscount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"typeId\",\"type\":\"uint256\"}],\"name\":\"getDiscountByType\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getHeatingDiscount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getWaterDiscount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"x\",\"type\":\"uint256\"}],\"name\":\"setAccountBalance\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"W. HE\",\"details\":\"All function calls are currently implemented without side effects\",\"events\":{\"LogSetAccountBalance(address,uint256,uint256)\":{\"details\":\"W. H\",\"params\":{\"_from\":\"is the from address of transaction. _value is the value of the transaction \"}}},\"kind\":\"dev\",\"methods\":{\"constructor\":{\"details\":\"W. H\",\"params\":{\"_num\":\"is the value to be set\"}},\"getAccountBalance()\":{\"details\":\"W. H\",\"returns\":{\"_0\":\"bill data\"}},\"getApplianceDiscount()\":{\"details\":\"W. H\",\"returns\":{\"_0\":\"Appliance discount rate\"}},\"getCoolingDiscount()\":{\"details\":\"W. H\",\"returns\":{\"_0\":\"Cooling discount rate\"}},\"getDiscountByType(uint256)\":{\"details\":\"W. H\",\"params\":{\"typeId\":\"is the bill value\"}},\"getHeatingDiscount()\":{\"details\":\"W. H\",\"returns\":{\"_0\":\"Heating discount rate\"}},\"getWaterDiscount()\":{\"details\":\"W. H\",\"returns\":{\"_0\":\"Water discount rate\"}},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"setAccountBalance(uint256)\":{\"details\":\"W. H\",\"params\":{\"x\":\"is the bill value \"}},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}},\"title\":\"My Home Energy Base\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"The contract is to pay home energy usage\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/MyHomeEnergy.sol\":\"MyHomeEnergy\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x6bb804a310218875e89d12c053e94a13a4607cdf7cc2052f3e52bd32a0dc50a1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b2ebbbe6d0011175bd9e7268b83de3f9c2f9d8d4cbfbaef12aff977d7d727163\",\"dweb:/ipfs/Qmd5c7Vxtis9wzkDNhxwc6A2QT5H9xn9kfjhx7qx44vpro\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0x90565a39ae45c80f0468dc96c7b20d0afc3055f344c8203a0c9258239f350b9f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://26e8b38a7ac8e7b4463af00cf7fff1bf48ae9875765bf4f7751e100124d0bc8c\",\"dweb:/ipfs/QmWcsmkVr24xmmjfnBQZoemFniXjj3vwT78Cz6uqZW1Hux\"]},\"project:/contracts/MyHomeEnergy.sol\":{\"keccak256\":\"0x35f66427c87e8ee36e398902de1cfed436ad7285a3f62f68555c40e74c53afa4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fcea17ffbaf4e8dc6fdb62b84f9d93b4c5f772b63aba22ce0a57e95801a5776c\",\"dweb:/ipfs/QmT3Rt3if6dyUWz18NyMNmYp9W1yMMccAwRar8BKwns55a\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.1+commit.df193b15\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"getApplianceDiscount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getCoolingDiscount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getHeatingDiscount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getWaterDiscount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"W. HE\",\"details\":\"....\",\"kind\":\"dev\",\"methods\":{},\"title\":\"My Home Energy Base\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"....\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"project:/contracts/MyHomeEnergy.sol\":\"EnergyProgramDiscountRate\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"keccak256\":\"0x6bb804a310218875e89d12c053e94a13a4607cdf7cc2052f3e52bd32a0dc50a1\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b2ebbbe6d0011175bd9e7268b83de3f9c2f9d8d4cbfbaef12aff977d7d727163\",\"dweb:/ipfs/Qmd5c7Vxtis9wzkDNhxwc6A2QT5H9xn9kfjhx7qx44vpro\"]},\"@openzeppelin/contracts/utils/Context.sol\":{\"keccak256\":\"0x90565a39ae45c80f0468dc96c7b20d0afc3055f344c8203a0c9258239f350b9f\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://26e8b38a7ac8e7b4463af00cf7fff1bf48ae9875765bf4f7751e100124d0bc8c\",\"dweb:/ipfs/QmWcsmkVr24xmmjfnBQZoemFniXjj3vwT78Cz6uqZW1Hux\"]},\"project:/contracts/MyHomeEnergy.sol\":{\"keccak256\":\"0x35f66427c87e8ee36e398902de1cfed436ad7285a3f62f68555c40e74c53afa4\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://fcea17ffbaf4e8dc6fdb62b84f9d93b4c5f772b63aba22ce0a57e95801a5776c\",\"dweb:/ipfs/QmT3Rt3if6dyUWz18NyMNmYp9W1yMMccAwRar8BKwns55a\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "immutableReferences": {},
@@ -5277,139 +5142,21 @@
     "name": "solc",
     "version": "0.8.1+commit.df193b15.Emscripten.clang"
   },
-  "networks": {
-    "4": {
-      "events": {},
-      "links": {},
-      "address": "0xff43b5B1C46BD39B3d60E79CA0fc67369f52F7b6",
-      "transactionHash": "0x0c12cc4eed6ab632fec50476ea1c7c8003d62ff2e7e92cbb16002adc8a15422f"
-    },
-    "5777": {
-      "events": {
-        "0x9c75dd06e29cf004ce2c6649e35b9f67686083c9ad282e7ac85531977acea5f1": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "_from",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "_value",
-              "type": "uint256"
-            }
-          ],
-          "name": "LogSetBillData",
-          "type": "event"
-        },
-        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "previousOwner",
-              "type": "address"
-            },
-            {
-              "indexed": true,
-              "internalType": "address",
-              "name": "newOwner",
-              "type": "address"
-            }
-          ],
-          "name": "OwnershipTransferred",
-          "type": "event"
-        }
-      },
-      "links": {},
-      "address": "0xA44A81766510142A3BEDD58678Fd1e03D2744C80",
-      "transactionHash": "0xf85d686ad897fb5102031fa0cb334edeab9cad7d7f18a36b1138d649ce317754"
-    }
-  },
+  "networks": {},
   "schemaVersion": "3.4.3",
-  "updatedAt": "2021-11-18T06:20:15.589Z",
+  "updatedAt": "2021-11-18T06:20:15.583Z",
   "devdoc": {
     "author": "W. HE",
-    "details": "All function calls are currently implemented without side effects",
-    "events": {
-      "LogSetAccountBalance(address,uint256,uint256)": {
-        "details": "W. H",
-        "params": {
-          "_from": "is the from address of transaction. _value is the value of the transaction "
-        }
-      }
-    },
+    "details": "....",
     "kind": "dev",
-    "methods": {
-      "constructor": {
-        "details": "W. H",
-        "params": {
-          "_num": "is the value to be set"
-        }
-      },
-      "getAccountBalance()": {
-        "details": "W. H",
-        "returns": {
-          "_0": "bill data"
-        }
-      },
-      "getApplianceDiscount()": {
-        "details": "W. H",
-        "returns": {
-          "_0": "Appliance discount rate"
-        }
-      },
-      "getCoolingDiscount()": {
-        "details": "W. H",
-        "returns": {
-          "_0": "Cooling discount rate"
-        }
-      },
-      "getDiscountByType(uint256)": {
-        "details": "W. H",
-        "params": {
-          "typeId": "is the bill value"
-        }
-      },
-      "getHeatingDiscount()": {
-        "details": "W. H",
-        "returns": {
-          "_0": "Heating discount rate"
-        }
-      },
-      "getWaterDiscount()": {
-        "details": "W. H",
-        "returns": {
-          "_0": "Water discount rate"
-        }
-      },
-      "owner()": {
-        "details": "Returns the address of the current owner."
-      },
-      "renounceOwnership()": {
-        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
-      },
-      "setAccountBalance(uint256)": {
-        "details": "W. H",
-        "params": {
-          "x": "is the bill value "
-        }
-      },
-      "transferOwnership(address)": {
-        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
-      }
-    },
+    "methods": {},
     "title": "My Home Energy Base",
     "version": 1
   },
   "userdoc": {
     "kind": "user",
     "methods": {},
-    "notice": "The contract is to pay home energy usage",
+    "notice": "....",
     "version": 1
   }
 }

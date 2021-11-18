@@ -1,6 +1,8 @@
-# blockchain-developer-bootcamp-final-project
+# ConsenSys Academy Blockchain Developer Bootcamp 2021 - Final Project
 
-Submitted for ConsenSys Academy Blockchain Developer Bootcamp 2021.
+Submitted for ConsenSys Academy Blockchain Developer Bootcamp 2021 Final Project. 
+
+blockchain-developer-bootcamp-final-project. 
 
 My Home Energy is a blockchain-based platform, which allows users to pay their home energy usage online.
 
@@ -17,14 +19,17 @@ The following directories and files are included:
 - "avoiding_common_attacks.md": the file describes the common attacks to avoid
 - "dapp.js": Java script 
 - "deployed_address.txt": Information about the deployed addresses
-- "design_pattern_decisions.md": Two design patterns chosen for this project
+- "design_pattern_decisions.md": Design patterns chosen for this project
 - "index.html": HTML front-end of the project
 - "README.md": Important notes to the project
 - “truffle-config.js”：Configuration file for the truffle project
  
 ## 2. Hosted Address
+The project is hosted on Heroku (https://www.heroku.com/), which is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud. 
 
-Hosted on Github Pages, Heroku, Netlify, Fleek, Surge or some other free frontend service that gives users a public interface to your decentralized application
+The front-end of the project is hosted at: https://consensysfinalproject.herokuapp.com/, which is for demonstration purpose.
+
+The Smart Contract is deployed on Rinkeby ETH Test Network. Details of the deployed address can be found in the "deployed_address.txt" file.
 
 ## 3. Installing Dependencies 
 Accessing or—if your project needs a server (not required)—running your project

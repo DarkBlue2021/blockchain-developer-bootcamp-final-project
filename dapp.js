@@ -93,25 +93,20 @@ ssSubmit.onclick = async () => {
 
 	energyBill.setProvider(window.ethereum)
 
-	try{
+	if (isNaN(ssValue) || (ssValue.length==0)){
+		mmTxStatus.innerHTML = '<span style="color:red">Input must not be empty, and must be numeric value! </span>'
+	} else{
+		mmTxStatus.innerHTML = '<span style="color:blue"> Processing transaction ... </span>'	
 
-		if (isNaN(ssValue) || (ssValue.length==0)){
-			mmTxStatus.innerHTML = '<span style="color:red">Input must not be empty, and must be numeric value! </span>'
-		} else{
-			mmTxStatus.innerHTML = '<span style="color:blue"> Processing transaction ... </span>'	
-
-			await energyBill.methods.setBillData(ssValue).send({from: ethereum.selectedAddress})
-			.on('confirmation',  function(confirmationNumber, receipt){
-				//console.log(confirmationNumber)
-				mmTxStatus.innerHTML = '<span style="color:green"> Transaction processed SUCESSFULLY! TxHash: ' + receipt["transactionHash"]  + "</span>"
-			})
-			.on('error',  function(error, receipt){
-				//console.log(error)
-				mmTxStatus.innerHTML = '<span style="color:red">Transaction processed FAILED ! Error: ' + error["message"] + "</span>"
-			});
-		}
-	} catch {
-		//mmTxStatus.innerHTML = '<span style="color:red">Unexpected error ! </span>'
+		await energyBill.methods.setBillData(ssValue).send({from: ethereum.selectedAddress})
+		.on('confirmation',  function(confirmationNumber, receipt){
+			//console.log(confirmationNumber)
+			mmTxStatus.innerHTML = '<span style="color:green"> Transaction processed SUCESSFULLY! TxHash: ' + receipt["transactionHash"]  + "</span>"
+		})
+		.on('error',  function(error, receipt){
+			//console.log(error)
+			mmTxStatus.innerHTML = '<span style="color:red">Transaction processed FAILED ! Error: ' + error["message"] + "</span>"
+		});
 	}
 }
 
