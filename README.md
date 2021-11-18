@@ -6,7 +6,7 @@ My Home Energy is a blockchain-based platform, which allows users to pay their h
 
 1. Directory structure
 The following directories and files are included: 
- (1) "contracts" directory: contains solidity files: 
+(1) "contracts" directory: contains solidity files: 
    (a) "Migrations.sol": migration script for the project
    (b) "MyHomeEnergy.sol: my home energy smart contract
  (2) "migrations" directory: contains javascript files: 

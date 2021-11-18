@@ -43,11 +43,11 @@ contract MyHomeEnergy {
   }
 }
 
-/// @title My Home Energy Special
+/// @title My Home Energy Application
 /// @author W. HE
 /// @notice The contract is to record home energy usage at special rates
 /// @dev All function calls are currently implemented without side effects
-contract MyHomeEnergyManager is MyHomeEnergy{
+contract MyHomeEnergyApp is MyHomeEnergy{
 
   constructor(uint256 _num) MyHomeEnergy(_num) public{}
 
