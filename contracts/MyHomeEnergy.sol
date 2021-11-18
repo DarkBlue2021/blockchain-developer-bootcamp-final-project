@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.7;
 
 // REQUIREMENTS 
 // (2) Use at least two design patterns from the "Smart Contracts" section (SEE A LIST OF DESIGN PATTERNS HERE)
@@ -8,6 +8,7 @@ pragma solidity ^0.8.0;
 //  -> https://swcregistry.io/ 
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@chainlink/contracts/src/v0.8/ChainlinkClient.sol";
 
 /// @title My Home Energy Base
 /// @author W. HE
@@ -25,6 +26,7 @@ interface EnergyProgramDiscountRate{
 /// @notice The contract is to pay home energy usage
 /// @dev All function calls are currently implemented without side effects
 abstract contract MyHomeEnergy is Ownable, EnergyProgramDiscountRate{
+
   uint256 public accountbalance;
   address ownerAddr = msg.sender;
 
@@ -114,14 +116,26 @@ abstract contract MyHomeEnergy is Ownable, EnergyProgramDiscountRate{
 /// @author W. HE
 /// @notice The contract is to record home energy usage at special rates
 /// @dev All function calls are currently implemented without side effects
-contract MyHomeEnergyApp is MyHomeEnergy{
+contract MyHomeEnergyApp is MyHomeEnergy, ChainlinkClient {
+  using Chainlink for Chainlink.Request;
 
-    uint256 discountValue;
+ // Oracle
+  uint256 public volume;
+  address private oracle;
+  bytes32 private jobId;
+  uint256 private fee;
+
+  uint256 discountValue;
 
     /// @notice 
     /// @dev W. H
     /// @param _num is the value to be set
   constructor(uint256 _num) MyHomeEnergy(_num){
+    // Oracle to get energy price
+    setPublicChainlinkToken();
+    oracle = 0xc57B33452b4F7BB189bB5AfaE9cc4aBa1f7a4FD8;
+    jobId = "d5270d1c311941d0b08bead21fea7747";
+    fee = 0.1 * 10 ** 18; // (Varies by network and job)
   }
 
     /// @notice 
@@ -136,5 +150,41 @@ contract MyHomeEnergyApp is MyHomeEnergy{
        //setBillData();
        emit LogSetAccountBalance(msg.sender, billtype, discountValue);
   }
+
+  /// @notice 
+  /// @dev W. H
+  /// @return requestId
+  function requestVolumeData222() public returns (bytes32 requestId) {
+        Chainlink.Request memory request = buildChainlinkRequest(jobId, address(this), this.fulfill222.selector);
+        
+        // Set the URL to perform the GET request on
+        request.add("get", "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH&tsyms=USD");
+        
+        // Set the path to find the desired data in the API response, where the response format is:
+        // {"RAW":
+        //   {"ETH":
+        //    {"USD":
+        //     {
+        //      "VOLUME24HOUR": xxx.xxx,
+        //     }
+        //    }
+        //   }
+        //  }
+        request.add("path", "RAW.ETH.USD.VOLUME24HOUR");
+        
+        // Multiply the result by 1000000000000000000 to remove decimals
+        int timesAmount = 10**18;
+        request.addInt("times", timesAmount);
+        
+        // Sends the request
+        return sendChainlinkRequestTo(oracle, request, fee);
+    }
+
+  /// @notice 
+  /// @dev W. H
+  /// @param  _requestId is the request, _volume is the _volume
+    function fulfill222(bytes32 _requestId, uint256 _volume) public recordChainlinkFulfillment(_requestId) {
+        volume = _volume;
+    }
 }
 
