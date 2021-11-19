@@ -86,37 +86,37 @@ Open My Home Energy page at: https://consensysfinalproject.herokuapp.com/
 ### (1) Check MetMask Wallet
 Confirm your web brower has MetMask installed on your computer. More information, refer to: https://metamask.io/. The page should display "Your Wallet (MetMask) has been detected!" message, if the browser has the plugin installed.
 
-Pictures ![Check Wallet](/screens/1a. Check MetMask Wallet.jpg) 
+Pictures ![Check Wallet](/screens/1a_CheckMetMaskWallet.jpg) 
 
 Otherwise, the page should display the following error:
 
-Pictures ![Check Wallet](/screens/1b. Check MetMask Wallet.jpg) 
+Pictures ![Check Wallet](/screens/1b_CheckMetMaskWallet.jpg) 
 
 
 ### (2) Connect to MetMask Wallet
 Click on the MetMask wallet plugin from your brower. Enter password to login. Make sure you are in Rinkeby network, as follows: 
 
-Pictures ![Check Wallet](/screens/2a. Connect to MetMask Wallet.jpg) 
+Pictures ![Check Wallet](/screens/2a_ConnecttoMetMaskWallet.jpg) 
 
 Once the wallet is connected, the Smart Contract's and Your Wallet's Account Details are displayed. 
 
-Pictures ![Check Wallet](/screens/2b. Connect to MetMask Wallet.jpg) 
+Pictures ![Check Wallet](/screens/2b_ConnecttoMetMaskWallet.jpg) 
 
 ### (3) Confirm Transaction Details 
 Enter the Bill you would like to pay - for now, future work will automatically populate the bill amount ; ) 
 
-Pictures ![Check Wallet](/screens/3a. Confirm Transaction Details.jpg) 
+Pictures ![Check Wallet](/screens/3a_ConfirmTransactionDetails.jpg) 
 
 Also, select any discount, which is based on the type of energy usage. If all details are OK, click on "Submit Payment" page. 
 
 ### (4) Pay in MetMask Wallet
 From your Metmask wallet, confirm details. The page should show the transaction is in progress. 
 
-Pictures ![Check Wallet](/screens/4a. Pay in MetMask Wallet.jpg) 
+Pictures ![Check Wallet](/screens/4a_PayinMetMaskWallet.jpg) 
 
 If all good, click on Approve. 
 
-Pictures ![Check Wallet](/screens/4b. Pay in MetMask Wallet.jpg) 
+Pictures ![Check Wallet](/screens/4b_PayinMetMaskWallet.jpg) 
 
 Otherwise,  Reject the transaction. 
 
@@ -125,11 +125,11 @@ Confirm the transaction has been processed.
 
 Sucessfully transactions are shown in green text, like below:
 
-Pictures ![Check Wallet](/screens/5a. Confirm Transaction Status.jpg)
+Pictures ![Check Wallet](/screens/5a_ConfirmTransactionStatus.jpg)
 
 Failed transactions are highlighed in red: 
 
-Pictures ![Check Wallet](/screens/5b. Confirm Transaction Status.jpg) 
+Pictures ![Check Wallet](/screens/5b_ConfirmTransactionStatus.jpg) 
 
 If necessary, check ETH Scan to confirm the transaction status. 
 
