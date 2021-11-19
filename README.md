@@ -32,9 +32,36 @@ The front-end of the project is hosted at: https://consensysfinalproject.herokua
 The Smart Contract is deployed on Rinkeby ETH Test Network. Details of the deployed address can be found in the "deployed_address.txt" file.
 
 ## 3. Installing Dependencies 
-Accessing or—if your project needs a server (not required)—running your project
-Running your smart contract unit tests and which port a local testnet should be running on.
-Note: This section used to require three bash scripts but has been revised.
+
+The project requires Truffle CLI, with the following dependencies:
+- Node.js v8.9.4 or later
+- NPM v5.0.3 or later
+- Windows, Linux or Mac OS X
+
+## 3.1 Install Truffle 
+
+Once you have the proper Node and npm installed, please run the following command from your terminal to install Truffle:
+- $ npm install -g truffle
+Note: In case you run into errors due to write permission on your local machine, try to run the command preceded by sudo:
+- $ sudo npm install -g truffle
+
+## 3.2 Deploy Smart Contract on Local Computer
+
+Once the project is cloned to your local Git repostory, to compile the project using Truffle:
+- truffle compile
+
+To deploy the project on your local computer:
+- truffle develop
+While in the development mode, use migrate to deploy locally:
+- $ truffle(develop)> migrate
+
+
+## 3.3 Deploy Smart Contract to Rinkeby Test Network
+
+Once the project is cloned to your local Git repostory, use the command:
+- $ truffle migrate --network rinkeby
+
+Note the address of the Smart Contract from "2_my_home_energy_app".
 
 ## 4. Project Screencast
 Walking through your project, including submitting transactions and seeing the updated state. You can use a screenrecorder of your choosing or something like Loom, and you can share the link to the recording in your README.md

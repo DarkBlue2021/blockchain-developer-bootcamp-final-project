@@ -15,25 +15,48 @@
     <br><br>
 
     <!-- 1. Detects the presence of MetaMask-->
+    <H2>Checking Your Wallet</H2>
+
     <div id="mm-detected"></div>
     <br>
 
     <!-- 2. Connects to the current account-->
+    <H2>Connect to Your Account</H1>
+
     <button id="mm-connect"> Connect to MetMask</button>
     <i>Note: Make sure you choose *Rinkeby* Test Network !</i>
+    <br><br>
+
+    <!-- 3a. Displays information from your smart contract-->
+    <div id="mm-current-contract"></div>
     <br>
 
-    <!-- 3. Displays information from your smart contract-->
     <div id="mm-current-account"></div>
     <br>
 
+    <div id="mm-payment-details"><H2>Pay Your Bill</H2></div>
+  
+
+    <div id="mm-bill-amount"></div>
+    <input id="ss-input-box" type="number" placeholder="Provide input"/>
+
+    <br><br>
+        
+    <div id="mm-discount-details"></div>
     <!-- 4. Allows a user to submit a transaction to update smart contract state -->
-    <button id="ss-discount-button">Apply Discount</button>
-    <br>
+    <button id="ss-discount-cooling">Cooling (10% off)</button>
+    &nbsp;
+    <button id="ss-discount-heating">Heating (15% off)</button>
+    &nbsp;
+    <button id="ss-discount-water">Water (20% off)</button>
+    &nbsp;
+    <button id="ss-discount-appliance">Appliance (25% off)</button>
+    <br><br>
+
+    <div id="mm-selected-discount"></div>
     <br>
 
-    <input id="ss-input-box" type="number" placeholder="Provide input"/>
-    <button id="ss-input-button">Submit Transaction</button>
+    <button id="ss-input-button">Submit Payment</button>
     <br>
     <br>
 

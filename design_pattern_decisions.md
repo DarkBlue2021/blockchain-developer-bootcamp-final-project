@@ -1,4 +1,4 @@
-Three design patterns are used in this project:
+Two design patterns are used in this project:
 
 (1) Inheritance and Interfaces:
 
@@ -10,7 +10,7 @@ Interfaces is used in "interface EnergyProgramDiscountRate" in "MyHomeEnergy.sol
 
 Ownable Design pattern is used, using openzeppelin's "Ownable.sol" libary.  Contracts "contract MyHomeEnergy" and "contract MyHomeEnergyApp" are therefore "Ownable". Functions "getAccountBalance", "setAccountBalance", "getDiscountByType", "applyDiscount".
 
-(3) Oracles (retrieving third-party data):
+
 
 
 

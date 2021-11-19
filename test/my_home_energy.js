@@ -82,49 +82,62 @@ contract("MyHomeEnergyApp", function (accounts) {
         assert.fail(err);
       }
     })
-    it ("4.6 Verify discount is applied to bill", async () =>{
-        //const ssInstance = await MyHomeEnergyApp.deployed();
-        //await ssInstance.setAccountBalance(100, { from: accounts[0] });
-        //try{
-        //  const discountValue = await ssInstance.GetDiscountByType(5); 
-        //}catch (err){
-        //  assert.fail(err);
-       //}
+    it ("4.6 Verify discount status has not been given to bill", async () =>{
+      const ssInstance = await MyHomeEnergyApp.deployed();
+      await ssInstance.setAccountBalance(100, { from: accounts[0] });
+      const discountUsed = await ssInstance.getDiscountStatus();
+      assert.equal(discountUsed, false, `Discount status should be false (not used)`)
+   })
+    it ("4.7 Verify discount is applied to bill (apply discount)", async () =>{
+        const ssInstance = await MyHomeEnergyApp.deployed();
+        await ssInstance.setAccountBalance(100, { from: accounts[0] });
+        await ssInstance.payEnergyBill(2, 20);
+        const discountValue = await ssInstance.getDiscountValue();
+        assert.equal(discountValue, 15, `Discount value should be 15`)
+        const paymentAmount = await ssInstance.getPaymentAmount();
+        assert.equal(paymentAmount, 5, `Payment should be 5, after discount`)
+        const discountUsed = await ssInstance.getDiscountStatus();
+        assert.equal(discountUsed, true, `Discount status should be true (used)`)   
+        const currentBalance = await ssInstance.getCurrentBalance();
+        assert.equal(currentBalance, 95, `Balance should be 95`)
      })
-     it ("4.7 Verify owner has enough to pay for the bill", async () =>{
-          //it("should have sufficient funds to pay bills", async() => {
-  //       const [owner, badjoe] = accounts;
-  //       const ssInstance = await MyHomeEnergyApp.new(42, {from:owner});
-  //       try{
-  //         await ssInstance.setBillData(22, {from: badjoe});
-  //       } catch (err){}
-  //       const balance = await web3.eth.getBalance(accounts[1]);
-  //       console.log(balance)
-  //       const billData = await ssInstance.getBillData.call();
-  //       assert.equal(billData, 42, 'bill data was not changed')
-  //     })
-  //  })
+     it ("4.8 Verify discount is applied to bill (discounted to zero)", async () =>{
+      const ssInstance = await MyHomeEnergyApp.deployed();
+      await ssInstance.setAccountBalance(100, { from: accounts[0] });
+      await ssInstance.payEnergyBill(3, 10);
+      const discountValue = await ssInstance.getDiscountValue();
+      assert.equal(discountValue, 20, `Discount value should be 20`)
+      const paymentAmount = await ssInstance.getPaymentAmount();
+      assert.equal(paymentAmount, 0, `Payment should be 0, after discount`)
+      const discountUsed = await ssInstance.getDiscountStatus();
+      assert.equal(discountUsed, true, `Discount status should be true (used)`)
+      const currentBalance = await ssInstance.getCurrentBalance();
+      assert.equal(currentBalance, 100, `Balance should be 100`)
+     })
+     it ("4.9 Verify not enough balance for payment ", async () =>{
+      const ssInstance = await MyHomeEnergyApp.deployed();
+      await ssInstance.setAccountBalance(5, { from: accounts[0] });
+      try{
+        await ssInstance.payEnergyBill(1, 20);
+        throw null;
+      } catch (err){}
+      const currentBalance = await ssInstance.getCurrentBalance();
+      assert.equal(currentBalance, 5, `Balance should be 5`)
      })
   })
 
   describe("Test 5. Non-owner must not read or change owner-only data or functions", () => {
-    it("5.1 Non-owner ", async() => {
+    it("5.1 Non-owner can not change owner-only data or functions", async() => {
       const [owner, badjoe] = accounts;
       const ssInstance = await MyHomeEnergyApp.new(42, {from:owner});
       try{
-        //await ssInstance.getAccountBalance.call({from: badjoe});
-        //await ssInstance.setAccountBalance(22, {from: badjoe});
-        //assert.fail();
-        //revert("badjoe is not the owner");
-        //assert.fail(null, null, "badjoe is not the owner");
-      } catch (err){
-        //assert.fail();
-        //assert.equal(err, "Caller is not owner", "badjoe is not the owner");
-      }
-      //const balance = await web3.eth.getBalance(getAccountBalance[1]);
-     // const billData = await ssInstance.getAccountBalance.call();
-     // assert.equal(billData, 42, 'Balance not changed by non-owner')
-     // })
-    })
+        await ssInstance.getCurrentBalance.call({from: badjoe});
+        await ssInstance.setAccountBalance(22, {from: badjoe});
+        assert.fail();
+        revert("badjoe is not the owner");
+        assert.fail(null, null, "badjoe is not the owner");
+        throw null;
+       } catch (err){}
+      })
   })
 });
