@@ -61,7 +61,7 @@ To deploy the project on your local computer:
 While in the development mode, use migrate to deploy locally:
 - $ truffle(develop)> migrate
 
-### 3.2 Test Smart Contract on Local Computer
+### 3.3 Test Smart Contract on Local Computer
 
 A set of test cases are developed, to test Smart Contact locally: 
 - truffle test
