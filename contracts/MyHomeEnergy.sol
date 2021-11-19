@@ -1,17 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
-// REQUIREMENTS 
-// (3) Protect against two attack vectors from the "Smart Contracts" section with its SWC number (SEE A LIST OF 
-//  ATTACK VECTORS HERE)
-//  -> https://swcregistry.io/ 
-
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 /// @title My Home Energy Base
 /// @author W. HE
-/// @notice ....
-/// @dev ....
+/// @notice Interace for Energy Programme Discount Rates
+/// @dev All function calls are currently implemented without side effects
 interface EnergyProgramDiscountRate{
      function getCoolingDiscount() view external returns (uint);
      function getHeatingDiscount()  view external returns (uint);
@@ -21,40 +16,40 @@ interface EnergyProgramDiscountRate{
 
 /// @title My Home Energy Base
 /// @author W. HE
-/// @notice The contract is to pay home energy usage
+/// @notice The contract is to pay home energy bill
 /// @dev All function calls are currently implemented without side effects
 abstract contract MyHomeEnergy is Ownable, EnergyProgramDiscountRate{
 
   uint256 public accountbalance;
   address ownerAddr = msg.sender;
 
-  /// @notice 
+  /// @notice  Event to record account balance
   /// @dev W. H
   /// @param _from is the from address of transaction. _value is the value of the transaction 
   event LogSetAccountBalance (address indexed _from, uint256 _type, uint256 _value);
 
-  /// @notice 
+  /// @notice  Constructor for home energy bill
   /// @dev W. H
   /// @param _num is the value to be set
   constructor (uint256 _num){ 
     accountbalance = _num;
   }
 
-  /// @notice 
+  /// @notice Get account balance function
   /// @dev W. H
-  /// @return bill data
+  /// @return Account balance
   function getAccountBalance() public view onlyOwner returns (uint256){
     return accountbalance;
   }
 
-  /// @notice 
+  /// @notice Set account balance function
   /// @dev W. H
   /// @param  x is the bill value 
   function setAccountBalance(uint256 x) public onlyOwner{
     accountbalance = x;
   }
 
-  /// @notice 
+  /// @notice Get discount by type
   /// @dev W. H
   /// @param  typeId is the bill value
   function getDiscountByType(uint256 typeId) view public onlyOwner returns (uint){
@@ -81,28 +76,28 @@ abstract contract MyHomeEnergy is Ownable, EnergyProgramDiscountRate{
       return 0;
   }
 
-  /// @notice 
+  /// @notice Get cooling discount rate
   /// @dev W. H
   /// @return Cooling discount rate
  function getCoolingDiscount() override public pure returns (uint){
     return 10;
  }
 
-  /// @notice 
+  /// @notice  Get heating discount rate
   /// @dev W. H
   /// @return Heating discount rate
   function getHeatingDiscount() override public pure returns (uint){
     return 15;
   }
   
-  /// @notice 
+  /// @notice Get water discount rate
   /// @dev W. H
   /// @return Water discount rate
   function getWaterDiscount() override public pure returns (uint){
     return 20;
   }
   
-  /// @notice 
+  /// @notice Get appliance discount rate
   /// @dev W. H
   /// @return Appliance discount rate
   function getApplianceDiscount() override public pure returns (uint){
@@ -121,17 +116,17 @@ contract MyHomeEnergyApp is MyHomeEnergy {
   uint256 discountValue;
   bool discountStatus;
 
-    /// @notice 
+    /// @notice Constructor for My Home Energy Application
     /// @dev W. H
     /// @param _num is the value to be set
   constructor(uint256 _num) MyHomeEnergy(_num){
     discountStatus = false;
   }
 
-    /// @notice 
+    /// @notice Pay Energy bill function
     /// @dev W. H
     /// @param billtype is type of the bill, between 1 and 4. billData is the bill amount 
-  function payEnergyBill(uint256 billtype, uint256 billData) onlyOwner public{
+  function payEnergyBill (uint256 billtype, uint256 billData) onlyOwner public{
       require(billtype >= 1 && billtype <= 4, "Bill value must be between 1 and 4");
       // Get the rate, based on bill type
       discountValue = getDiscountByType(billtype);
@@ -146,28 +141,28 @@ contract MyHomeEnergyApp is MyHomeEnergy {
       emit LogSetAccountBalance(msg.sender, billtype, discountValue);
   }
 
-    /// @notice 
+    /// @notice Get Payment Amount
     /// @dev W. H
      /// @return paymentAmount, to indicate if discount has been given
      function getPaymentAmount()  public view onlyOwner returns (uint256){
         return paymentAmount;
      }
 
-    /// @notice 
+    /// @notice Get Current Balance
     /// @dev W. H
      /// @return accountbalance, to indicate if discount has been given
      function getCurrentBalance()  public view onlyOwner returns (uint256){
         return accountbalance;
      }
 
-    /// @notice 
+    /// @notice Get Discount Value
     /// @dev W. H
      /// @return discountValue, to indicate if discount has been given
      function getDiscountValue()  public view onlyOwner returns (uint256){
         return discountValue;
      }
 
-    /// @notice 
+    /// @notice Get Discount Status
     /// @dev W. H
      /// @return discountStatus, to indicate if discount has been given
      function getDiscountStatus()  public view onlyOwner returns (bool){

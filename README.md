@@ -8,16 +8,16 @@ My Home Energy is a blockchain-based platform, which allows users to pay their h
 
 ## 1. Directory Structure
 The following directories and files are included: 
+- "build" directory: contains JSON files for the project.
 - "contracts" directory: contains solidity files: 
    - "Migrations.sol": migration script for the project
    - "MyHomeEnergy.sol: my home energy smart contract
 - "migrations" directory: contains javascript files: 
    - "1_initial_migration.js": initial migration script
-   - xxxxxxxxxxxx
-   - xxxxxxxxxxxx
-- "test" directory: xxxxxxxxxxxxx
+   - "2_my_home_energy_app.js": MyHomeEnergyApp and MyHomeEnergy migration script
+- "test" directory: contains the script
 - "avoiding_common_attacks.md": the file describes the common attacks to avoid
-- "dapp.js": Java script 
+- "dapp.js": Java script document for front0end
 - "deployed_address.txt": Information about the deployed addresses
 - "design_pattern_decisions.md": Design patterns chosen for this project
 - "index.html": HTML front-end of the project
@@ -29,7 +29,7 @@ The project is hosted on Heroku (https://www.heroku.com/), which is a platform a
 
 The front-end of the project is hosted at: https://consensysfinalproject.herokuapp.com/, which is for demonstration purpose.
 
-The Smart Contract is deployed on Rinkeby ETH Test Network address: ############################
+The Smart Contract is deployed on Rinkeby ETH Test Network address: 0x5aF388f6eEAA78542daEd765688850cb31F8CbB2.
 
 Details of the deployed address can be found in the "deployed_address.txt" file.
 
@@ -68,6 +68,8 @@ A set of test cases are developed, to test Smart Contact locally:
 
 ### 3.4 Deploy Smart Contract to Rinkeby Test Network
 
+The Rinkeby Test Network is configured on Infura. See the "network" sections in "truffle-config.js" for details.
+
 Once the project is cloned to your local Git repostory, use the command:
 - $ truffle migrate --network rinkeby
 
@@ -76,30 +78,58 @@ Note the Smart Contract address from "2_my_home_energy_app". This address is use
 ## 4. Project Screencast
 Walking through your project, including submitting transactions and seeing the updated state. You can use a screenrecorder of your choosing or something like Loom, and you can share the link to the recording in your README.md
 
-### (1) Check MetMask Wallet
-Confirm your web brower has MetMask installed on your computer. More information, refer to: https://metamask.io/
+The My Home Energy page is deployed at Heroku, for testing purpose at this stage. 
+Open My Home Energy page at: https://consensysfinalproject.herokuapp.com/
 
 > Note: For the purpose of this demonstrate, make sure you have enough Rinkeby ETH in your wallet.
 
-### (2) Open My Home Energy page
-The My Home Energy page is deployed at Heroku, for testing purpose at this stage. 
-Open My Home Energy page at: https://consensysfinalproject.herokuapp.com/
-Pictures ![Test picture](/screens/Test.jpg)
+### (1) Check MetMask Wallet
+Confirm your web brower has MetMask installed on your computer. More information, refer to: https://metamask.io/. The page should display "Your Wallet (MetMask) has been detected!" message, if the browser has the plugin installed.
 
-### (3) Check Bill Details
-Confirm the Energy Bill to pay is correct.  
+Pictures ![Check Wallet](/screens/1a. Check MetMask Wallet.png) 
 
-### (4) Connect to MetMask Wwallet
-Click on the MetMask wallet plugin from your brower. Enter password to login. Make sure you are in Rinkeby network.
+Otherwise, the page should display the following error:
 
-### (5) Confirm Transaction Details 
-Click on the Submit button, if all details are OK.  
+Pictures ![Check Wallet](/screens/1b. Check MetMask Wallet.png) 
 
-### (6) Pay in MetMask Wallet
-From your Metmask wallet, confirm details. If all good, click on Approve. Otherwise,  Reject the transaction. 
 
-### (7) Confirm Transaction Status
+### (2) Connect to MetMask Wallet
+Click on the MetMask wallet plugin from your brower. Enter password to login. Make sure you are in Rinkeby network, as follows: 
+
+Pictures ![Check Wallet](/screens/2a. Connect to MetMask Wallet.png) 
+
+Once the wallet is connected, the Smart Contract's and Your Wallet's Account Details are displayed. 
+
+Pictures ![Check Wallet](/screens/2b. Connect to MetMask Wallet.png) 
+
+### (3) Confirm Transaction Details 
+Enter the Bill you would like to pay - for now, future work will automatically populate the bill amount ; ) 
+
+Pictures ![Check Wallet](/screens/3a. Confirm Transaction Details.png) 
+
+Also, select any discount, which is based on the type of energy usage. If all details are OK, click on "Submit Payment" page. 
+
+### (4) Pay in MetMask Wallet
+From your Metmask wallet, confirm details. The page should show the transaction is in progress. 
+
+Pictures ![Check Wallet](/screens/4a. Pay in MetMask Wallet.png) 
+
+If all good, click on Approve. 
+
+Pictures ![Check Wallet](/screens/4b. Pay in MetMask Wallet.png) 
+
+Otherwise,  Reject the transaction. 
+
+### (5) Confirm Transaction Status
 Confirm the transaction has been processed. 
+
+Sucessfully transactions are shown in green text, like below:
+
+Pictures ![Check Wallet](/screens/5a. Confirm Transaction Status.png)
+
+Failed transactions are highlighed in red: 
+
+Pictures ![Check Wallet](/screens/5b. Confirm Transaction Status.png) 
 
 If necessary, check ETH Scan to confirm the transaction status. 
 
@@ -107,3 +137,8 @@ If necessary, check ETH Scan to confirm the transaction status.
 > IMPORTANT: DO NOT UPLOAD SENSITIVE INFORMATION TO GITHUB OR A PUBLIC SITE! 
 
 Your Infura account details, MetaMask mnemonics, any private keys, etc., should all be in a ".env" file which you add to your .gitignore in your project locally. To populate your ".env" File, refer to https://blog.infura.io/how-to-use-dotenv-to-enhance-basic-security-within-your-dapp/
+
+## 6. Blockchain Developer Certification
+
+Public Address: 0x58b36E0eF26BF365a0F37651E1561B1340333b11
+

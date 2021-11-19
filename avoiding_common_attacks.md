@@ -1,31 +1,19 @@
 
 # Avoid Common Attacks
 
-Protect against two attack vectors from the "Smart Contracts" section with its SWC number
+Protect against two attack vectors from the "Smart Contracts" section.
 
 ## Solidity Pitfalls and Attacks
 
-- Using Specific Compiler Pragma. The project requires specific solidity 0.8.7.
+- SWC-103. Using Specific Compiler Pragma. The project requires specific solidity 0.8.7.
 
-- Proper Use of Require, Assert and Revert. Used in "contract MyHomeEnergyApp".
-
-- Use Modifiers Only for Validation. 
-
-- Pull Over Push (Prioritize receiving contract calls over making contract calls). 
-
-- Checks-Effects-Interactions (Avoiding state changes after external calls).
-
-- Proper use of .call and .delegateCall. The project does not use these functions. 
+- SWC-110. Proper Use of Require, Assert and Revert. Used in "contract MyHomeEnergyApp".
 
 ## Smart Contract Pitfalls and Attacks
 
-Not everything can be avoided, but you can write if you’re taking protection against:
-- Re-entrancy (Do not perform external calls in contracts. If you do, ensure that they are the 
-very last thing you do)
+- SWC-107. Re-entrancy (Do not perform external calls in contracts. If you do, ensure that they are the very last thing you do)  This is avoided (not required) in this project.
 
-- Timestamp Dependence (Do not use timestamps in critical parts of the code, because miners can manipulate them.)
+- SWC-114. Timestamp Dependence (Do not use timestamps in critical parts of the code, because miners can manipulate them.)  This is avoided (not required) in this project.
 
-- Forcibly Sending Ether. 
-
-- Tx.Origin Authentication (Not using tx.origin for authentication (or indeed, at all).)
+- SWC-115. Tx.Origin Authentication (Not using tx.origin for authentication (or indeed, at all).  This is avoided (not required)  in this project.
 

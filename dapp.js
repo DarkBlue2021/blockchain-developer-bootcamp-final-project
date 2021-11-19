@@ -1,7 +1,7 @@
 console.log("My Home Energy!")
 
-const ssAddress = '0x5FDA6CED83177fAe017fB4AAA463c4bc34f922D0' // Smart contract address
-//const sTestBillAmount = 100 // Test bill amount
+// Smart contract address
+const ssAddress = '0x5aF388f6eEAA78542daEd765688850cb31F8CbB2' 
 var iDiscountSelection = 0;
 
 const ssABI =
@@ -385,16 +385,11 @@ ssSubmit.onclick = async () => {
 	} else{
 		mmTxStatus.innerHTML = '<span style="color:blue"> Processing transaction ... </span>'	
 
-		//await energyBill.methods.setAccountBalance(ssValue).send({from: ethereum.selectedAddress})
 		await energyBill.methods.payEnergyBill(iDiscountSelection, ssValue).send({from: ethereum.selectedAddress})
-		//await energyBill.methods.payEnergyBill(iDiscountSelection, ssValue).send({from: ethereum.selectedAddress})
 		.on('confirmation',  function(confirmationNumber, receipt){
-			//console.log(confirmationNumber)
-
 			mmTxStatus.innerHTML = '<span style="color:green"> Transaction processed SUCESSFULLY! TxHash: ' + receipt["transactionHash"]  + "</span>"
 		})
 		.on('error',  function(error, receipt){
-			//console.log(error)
 			mmTxStatus.innerHTML = '<span style="color:red">Transaction processed FAILED ! Error: ' + error["message"] + "</span>"
 		});
 	}
