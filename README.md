@@ -29,7 +29,9 @@ The project is hosted on Heroku (https://www.heroku.com/), which is a platform a
 
 The front-end of the project is hosted at: https://consensysfinalproject.herokuapp.com/, which is for demonstration purpose.
 
-The Smart Contract is deployed on Rinkeby ETH Test Network. Details of the deployed address can be found in the "deployed_address.txt" file.
+The Smart Contract is deployed on Rinkeby ETH Test Network address: ############################
+
+Details of the deployed address can be found in the "deployed_address.txt" file.
 
 ## 3. Installing Dependencies 
 
@@ -41,9 +43,12 @@ The project requires Truffle CLI, with the following dependencies:
 ### 3.1 Install Truffle 
 
 Once you have the proper Node and npm installed, please run the following command from your terminal to install Truffle:
-- $ npm install -g truffle
+- $ npm install -g truffle3
+
 Note: In case you run into errors due to write permission on your local machine, try to run the command preceded by sudo:
 - $ sudo npm install -g truffle
+
+Refer to Truffle Suite website, https://www.trufflesuite.com/docs/truffle/getting-started/installation, for more information.
 
 ### 3.2 Deploy Smart Contract on Local Computer
 
@@ -52,16 +57,21 @@ Once the project is cloned to your local Git repostory, to compile the project u
 
 To deploy the project on your local computer:
 - truffle develop
+
 While in the development mode, use migrate to deploy locally:
 - $ truffle(develop)> migrate
 
+### 3.2 Test Smart Contract on Local Computer
 
-### 3.3 Deploy Smart Contract to Rinkeby Test Network
+A set of test cases are developed, to test Smart Contact locally: 
+- truffle test
+
+### 3.4 Deploy Smart Contract to Rinkeby Test Network
 
 Once the project is cloned to your local Git repostory, use the command:
 - $ truffle migrate --network rinkeby
 
-Note the address of the Smart Contract from "2_my_home_energy_app".
+Note the Smart Contract address from "2_my_home_energy_app". This address is used by the Front-end page to interact with the deployed Smart Contract, as in Section 
 
 ## 4. Project Screencast
 Walking through your project, including submitting transactions and seeing the updated state. You can use a screenrecorder of your choosing or something like Loom, and you can share the link to the recording in your README.md
