@@ -15,9 +15,9 @@ The following directories and files are included:
 - "migrations" directory: contains javascript files: 
    - "1_initial_migration.js": initial migration script
    - "2_my_home_energy_app.js": MyHomeEnergyApp and MyHomeEnergy migration script
-- "test" directory: contains the script
+- "test" directory: contains the test scripts
 - "avoiding_common_attacks.md": the file describes the common attacks to avoid
-- "dapp.js": Java script document for front0end
+- "dapp.js": Java script document for front-end
 - "deployed_address.txt": Information about the deployed addresses
 - "design_pattern_decisions.md": Design patterns chosen for this project
 - "index.html": HTML front-end of the project
@@ -73,50 +73,48 @@ The Rinkeby Test Network is configured on Infura. See the "network" sections in 
 Once the project is cloned to your local Git repostory, use the command:
 - $ truffle migrate --network rinkeby
 
-Note the Smart Contract address from "2_my_home_energy_app". This address is used by the Front-end page to interact with the deployed Smart Contract, as in Section 
+Note the Smart Contract address from "2_my_home_energy_app". This address is used by the Front-end page to interact with the deployed Smart Contract.
 
 ## 4. Project Screencast
-Walking through your project, including submitting transactions and seeing the updated state. You can use a screenrecorder of your choosing or something like Loom, and you can share the link to the recording in your README.md
 
-The My Home Energy page is deployed at Heroku, for testing purpose at this stage. 
-Open My Home Energy page at: https://consensysfinalproject.herokuapp.com/
+The My Home Energy page is deployed at Heroku, for testing purpose at this stage. Open My Home Energy page at: https://consensysfinalproject.herokuapp.com/
 
 > Note: For the purpose of this demonstrate, make sure you have enough Rinkeby ETH in your wallet.
 
 ### (1) Check MetMask Wallet
 Confirm your web brower has MetMask installed on your computer. More information, refer to: https://metamask.io/. The page should display "Your Wallet (MetMask) has been detected!" message, if the browser has the plugin installed.
 
-Pictures ![Check Wallet](/screens/1a_CheckMetMaskWallet.jpg) 
+![Check Wallet](/screens/1a_CheckMetMaskWallet.jpg) 
 
 Otherwise, the page should display the following error:
 
-Pictures ![Check Wallet](/screens/1b_CheckMetMaskWallet.jpg) 
+![Check Wallet](/screens/1b_CheckMetMaskWallet.jpg) 
 
 
 ### (2) Connect to MetMask Wallet
 Click on the MetMask wallet plugin from your brower. Enter password to login. Make sure you are in Rinkeby network, as follows: 
 
-Pictures ![Check Wallet](/screens/2a_ConnecttoMetMaskWallet.jpg) 
+![Check Wallet](/screens/2a_ConnecttoMetMaskWallet.jpg) 
 
 Once the wallet is connected, the Smart Contract's and Your Wallet's Account Details are displayed. 
 
-Pictures ![Check Wallet](/screens/2b_ConnecttoMetMaskWallet.jpg) 
+![Check Wallet](/screens/2b_ConnecttoMetMaskWallet.jpg) 
 
 ### (3) Confirm Transaction Details 
 Enter the Bill you would like to pay - for now, future work will automatically populate the bill amount ; ) 
 
-Pictures ![Check Wallet](/screens/3a_ConfirmTransactionDetails.jpg) 
+![Check Wallet](/screens/3a_ConfirmTransactionDetails.jpg) 
 
 Also, select any discount, which is based on the type of energy usage. If all details are OK, click on "Submit Payment" page. 
 
 ### (4) Pay in MetMask Wallet
 From your Metmask wallet, confirm details. The page should show the transaction is in progress. 
 
-Pictures ![Check Wallet](/screens/4a_PayinMetMaskWallet.jpg) 
+![Check Wallet](/screens/4a_PayinMetMaskWallet.jpg) 
 
 If all good, click on Approve. 
 
-Pictures ![Check Wallet](/screens/4b_PayinMetMaskWallet.jpg) 
+![Check Wallet](/screens/4b_PayinMetMaskWallet.jpg) 
 
 Otherwise,  Reject the transaction. 
 
@@ -125,11 +123,11 @@ Confirm the transaction has been processed.
 
 Sucessfully transactions are shown in green text, like below:
 
-Pictures ![Check Wallet](/screens/5a_ConfirmTransactionStatus.jpg)
+![Check Wallet](/screens/5a_ConfirmTransactionStatus.jpg)
 
 Failed transactions are highlighed in red: 
 
-Pictures ![Check Wallet](/screens/5b_ConfirmTransactionStatus.jpg) 
+![Check Wallet](/screens/5b_ConfirmTransactionStatus.jpg) 
 
 If necessary, check ETH Scan to confirm the transaction status. 
 
