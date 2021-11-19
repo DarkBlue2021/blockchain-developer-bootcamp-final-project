@@ -38,14 +38,14 @@ The project requires Truffle CLI, with the following dependencies:
 - NPM v5.0.3 or later
 - Windows, Linux or Mac OS X
 
-## 3.1 Install Truffle 
+# 3.1 Install Truffle 
 
 Once you have the proper Node and npm installed, please run the following command from your terminal to install Truffle:
 - $ npm install -g truffle
 Note: In case you run into errors due to write permission on your local machine, try to run the command preceded by sudo:
 - $ sudo npm install -g truffle
 
-## 3.2 Deploy Smart Contract on Local Computer
+# 3.2 Deploy Smart Contract on Local Computer
 
 Once the project is cloned to your local Git repostory, to compile the project using Truffle:
 - truffle compile
@@ -56,7 +56,7 @@ While in the development mode, use migrate to deploy locally:
 - $ truffle(develop)> migrate
 
 
-## 3.3 Deploy Smart Contract to Rinkeby Test Network
+# 3.3 Deploy Smart Contract to Rinkeby Test Network
 
 Once the project is cloned to your local Git repostory, use the command:
 - $ truffle migrate --network rinkeby
